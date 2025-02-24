@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Cullian Extension",
+  "version": "1.0",
+  "description": "",
+  "icons": {
+    "48": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://nut.uk.ac.ir/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://nut.uk.ac.ir/FoodBasket/FoodBasketBuy.aspx"],
+      "js": ["content.js"]
+    }
+  ]
+}
